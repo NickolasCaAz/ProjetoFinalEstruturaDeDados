@@ -166,6 +166,22 @@ bool atualizar(Cobrinha *cobrinha, Comida *comida) {
     return false;
 }
 
+void comecarJogo() {
+    Cobrinha cobrinha;
+    Comida comida;
+    inicializar(&cobrinha, &comida);
+    pontuacao = 0;
+    while (1) {
+        mostrarJogo(&cobrinha, &comida);
+        capturarEntrada(&cobrinha, &comida);
+        if(atualizar(&cobrinha, &comida)) {
+            return;
+        }
+        Sleep(42); // Delay para controle de velocidade da serpente
+    }
+}
+
+
 
 int main(){
 
