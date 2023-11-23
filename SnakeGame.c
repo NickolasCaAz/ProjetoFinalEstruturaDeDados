@@ -181,6 +181,17 @@ void comecarJogo() {
     }
 }
 
+void mostraInformacoes() {
+    printf("\n\nO jogo da cobrinha, ou Snake, e um classico onde os jogadores controlam uma\n"
+       "serpente que cresce ao coletar alimentos, desviando-se das bordas do campo e do\n"
+       "proprio corpo. Os controles, usando as teclas WASD, direcionam a serpente para\n"
+       "frente, esquerda, baixo ou direita. A medida que a cobra aumenta de tamanho, a\n"
+       "dificuldade aumenta, exigindo raciocinio rapido para evitar colisoes. O desafio\n"
+       "constante entre coletar alimentos e evitar obstaculos torna o Snake um jogo\n"
+       "simples e viciante.\n\n");
+}
+
+
 
 
 int main(){
