@@ -134,6 +134,15 @@ void mostrarJogo(Cobrinha *cobrinha, Comida *comida) {
     printf("\n");
 }
 
+bool verificarColisaoComida(Cobrinha *cobrinha, Comida *comida) {
+    if (cobrinha->cabeca->x == comida->x && cobrinha->cabeca->y == comida->y) {
+        pontuacao += 1;
+        return true;
+    }
+    return false;
+}
+
+
 int main(){
 
 }
