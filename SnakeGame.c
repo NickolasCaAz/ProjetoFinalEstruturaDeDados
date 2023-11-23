@@ -142,6 +142,30 @@ bool verificarColisaoComida(Cobrinha *cobrinha, Comida *comida) {
     return false;
 }
 
+bool atualizar(Cobrinha *cobrinha, Comida *comida) {
+    if (verificarColisaoComida(cobrinha, comida)) {
+        // A cobrinha comeu a comida
+        adicionarNo(cobrinha, comida->x, comida->y);
+        cobrinha->comprimento++;
+        novaComida(comida);
+    }
+
+    mover(cobrinha);
+
+    if (verificarColisao(cobrinha)) {
+        printf("\n\tGAME OVER!\n");
+        if (pontuacao > maiorPontuacao) {
+            // TODO: gravar pontuacao em um arquivo (?)
+            maiorPontuacao = pontuacao;
+            printf("\tNOVO RECORDE!\n");
+        }
+        printf("\tSua pontuacao foi: %d\n\n", pontuacao);
+        return true;
+    }
+
+    return false;
+}
+
 
 int main(){
 
